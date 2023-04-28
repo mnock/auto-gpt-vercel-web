@@ -5,16 +5,10 @@ import { useApiService } from '../hooks/useApiService';
 import { OutputSegment, useContextStore } from '../store/useContextStore';
 
 export function OutputSegmentsList() {
-  const { socket, outputSegments, backendState } = useContextStore();
-
-  if (!socket) {
-    return null;
-  }
-
+  const { outputSegments, backendState } = useContextStore();
   if (!outputSegments.length) {
     return null;
   }
-
   const lastSegment = outputSegments[outputSegments.length - 1];
   const shouldShowProgress =
     backendState?.activeProcessRunning && !lastSegment.expectedUserInteraction;
