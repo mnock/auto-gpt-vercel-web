@@ -5,10 +5,10 @@ import { AboutInfoModal } from './AboutInfoModal';
 import { SettingsDrawer } from './SettingsDrawer';
 
 export function TheAreaAtTheBottom() {
-  const { socket, backendState, outputSegments } = useContextStore();
+  const { backendState, outputSegments } = useContextStore();
   const apiService = useApiService();
 
-  if (!socket || !backendState) {
+  if (!backendState) {
     return null;
   }
 
